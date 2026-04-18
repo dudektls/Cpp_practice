@@ -14,7 +14,7 @@ public:
 	~Chart();
 	string getcolor(int i);
 	void draw();
-	void add(int i, int count); // 반환형을 double로 통일
+	void add(int i, int count); 
 	int data[3];
 	double result = 0.0;
 };
