@@ -19,5 +19,4 @@ int main() {
 	int d = add(b, 3, c);
 	cout << c << endl;
 	cout << d << endl;
-
 }
