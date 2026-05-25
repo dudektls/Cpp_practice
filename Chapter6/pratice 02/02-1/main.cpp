@@ -2,7 +2,7 @@
 #include<iostream>
 using namespace std;
 
-void printMatirx() {
+void printMatrix() {
 	for (int i = 0; i < 2; i++) {
 		for (int j = 0; j < 2; j++) {
 			cout << '*';
@@ -28,7 +28,7 @@ void printMatrix(int x, int y) {
 }
 
 int main() {
-	printMatirx();
+	printMatrix();
 	printMatrix(2, 5, 'a');
 	printMatrix(1, 10);
 }
