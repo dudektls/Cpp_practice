@@ -1,14 +1,19 @@
 #pragma once
-#include <iostream>
 #include <string>
+#include <iostream>
+using namespace std;
 
-class pet {
-	string name;  // 이름 저장 string
-	int Energy;   // 에너지 변수
-	int love;     // 친밀도 변수
-	int bad;      // 경고 변수
+class Pet {
 protected:
-	void eatFood();  // 음식 먹기
-	void doAct();   // 활동 하기
-
+	string petName; // 펫의 이름
+	string petType; // 펫의 종류
+	int Energy; // 펫의 에너지 초기값
+	int Love; // 펫의 친밀도 초기값
+	int Term;// 남은 턴수 
+public:
+	Pet();
+	Pet(string name, string type);
+	void printStart();
+	void printterm(int totalturn);
+	void printStatus();
 };
