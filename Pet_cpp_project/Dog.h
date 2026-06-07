@@ -14,6 +14,12 @@ public:
 	Dog(string name,int turn);
 	void printStatus();
     void printStatus(int i);
+	Dog(const Dog& mother);
+	Dog(const Pet& pet);
 	void eat(string type);
-	void act(string type);
+	int act(string type);
+	int getLove(){
+		return Love;
+	}
+	int checkbreeding();
 };
