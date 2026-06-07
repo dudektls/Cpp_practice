@@ -20,6 +20,9 @@ public:
 		petName = name;
 		RunTurn = Turn;
 	}
+
+	virtual ~Pet() {};
+	
 	virtual void eat(string type) {}  //먹이 먹는 메서드
 	virtual int act(string type) { return 0; }  // 활동하는 메서드
 	virtual int getLove() { return 0; }
