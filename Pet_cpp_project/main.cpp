@@ -14,7 +14,7 @@ int main() {
 	string foodtype;
 	string acttype;
 
-	Dog* puppyList[10] = {};
+	Dog* puppyList[100] = {};
 	int puppycount = 0;
 
 	cout << "지금 부터 펫 키우기 게임을 시작하겠습니다." << endl;
@@ -24,10 +24,10 @@ int main() {
 	cout << "진행할 게임의 턴 수를 정해주세요 : ";
 	cin >> gameturn;
 	Pet pet(Name, gameturn);
-	Pet* mypet = new Dog(Name, gameturn);  // 업캐스팅
+	Pet* mypet = new Dog(Name, gameturn);  
 	cout << "현재 반려동물의 스탯입니다." << endl;
 	mypet->printStatus();
-	cout << "지금 부터 게임을 시작합니다. 행운을 빕니다." << endl;  //fin
+	cout << "지금 부터 게임을 시작합니다. 행운을 빕니다." << endl;  
 
 	// 게임 구현부
 
@@ -42,20 +42,18 @@ int main() {
 			cout << "먹이와 활동중 하나를 선택해주세요 : ";
 			cin >> doType;
 
-			if (doType == "먹이") {  //먹이 로직 Fin
+			if (doType == "먹이") {  
 				cout << "(먹이 종류 : 일반먹이, 프리미엄먹이, 간식)" << endl;
 				cout << "어떤 먹이를 먹습니까? : ";
 				cin >> foodtype;
 				mypet->eat(foodtype);
 
-				if (mypet->checkbreeding() == 1) {  // 친밀도 체크후 200이상시 새끼 낳는 로직
+				if (mypet->checkbreeding() == 1) {  
 					if (puppycount < 10) {
 						puppyList[puppycount] = new Dog(*mypet);
 						puppycount++;
 						cout << Name << " 의 친밀도가 200 이상이 되어 총 " << puppycount << " 마리 새끼를 낳았습니다. " << endl;
-
 					}
-
 				}
 
 				mypet->printStatus();  // 먹이로 인한 에너지, 친밀도 상승 실시간 출력
@@ -68,7 +66,7 @@ int main() {
 				}
 			}
 
-			else if (doType == "활동") {  // 활동 로직 Fin
+			else if (doType == "활동") { 
 				cout << "(활동 종류 : 산책, 놀이, 씻기, 자기)" << endl;
 				cout << "어떤 활동을 합니까? : ";
 				cin >> acttype;
@@ -85,13 +83,12 @@ int main() {
 
 				}
 
-				mypet->printStatus(); // 활동으로 인한 에너지, 친밀도 상승&감소 실시간 출력
 
 				ActCount++;
 				cout << "남은 활동 횟수 : " << 2 - ActCount << endl;
 
 				if (acttype == "자기") {
-					cout << Name << "이 자기 시작합니다." << endl;
+					cout << Name << "(이)가 자기 시작합니다." << endl;
 
 					break;
 				}
@@ -107,6 +104,7 @@ int main() {
 					break;
 				}
 
+				mypet->printStatus(); // 활동으로 인한 에너지, 친밀도 상승&감소 실시간 출력
 
 			}
 
@@ -119,7 +117,7 @@ int main() {
 
 		}
 
-		cout << "하루가 끝났습니다." << endl << " 오늘 하루 " << Name << "의 스탯입니다" << endl; ;  // 일과 끝 최종스탯 출력
+		cout << "하루가 끝났습니다." << endl << " 오늘 하루 " << Name << "의 스탯입니다" << endl; ;  
 		mypet->printStatus(i);
 
 		if (i == gameturn) {
