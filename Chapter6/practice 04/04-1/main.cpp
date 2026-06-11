@@ -24,7 +24,7 @@ string erase(string text, string ch1, string ch2) {  // 모든 ch1을 ch2로 바
 	int pos = text.find(ch1);
 	while (pos != string::npos) {
 		text.replace(pos, ch1.length(), ch2);
-		pos = text.find(ch1,pos+ch2.length());
+		pos = text.find(ch1);
 	}
 	return text;
 }
