@@ -13,6 +13,7 @@ public:
 			delete[] name;
 		}
 	}
+	person(const person& person);
 	void changename(const char* name);
 	void show() {
 		cout << id << ',' << name << endl;
