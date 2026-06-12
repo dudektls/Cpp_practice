@@ -6,7 +6,7 @@ using namespace std;
 collector::collector(int size, int value[]) {
 	this->p = new int[size];
 	for (int i = 0; i < size; i++) {
-		this->p = value;
+		this->p[i] = value[i];
 	}
 	this->size = size;
 }
