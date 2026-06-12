@@ -3,7 +3,7 @@
 using namespace std;
 
 #include "head.h"
-double calcAvg(collector& w) {
+double calcAvg(collector w) {
 	double result = 0.0;
 	for (int i = 0; i < w.getsize(); i++) {
 		result = result + w.get(i);
