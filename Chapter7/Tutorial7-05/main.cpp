@@ -10,7 +10,7 @@ int main() {
 	if (a == b) {
 		cout << "Equal" << endl;
 	}
-	else
+	else 
 		cout << "Not Equal" << endl;
 	return 0;
 }
